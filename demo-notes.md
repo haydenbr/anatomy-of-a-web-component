@@ -1,71 +1,27 @@
-```JavaScript
-const styles = `
-p {
-	color: #f8981c;
-}
-`;
+# bob-is-cool
 
-const template = `
-<style>${styles}</style>
-<p><span id="name"></span> is cool!!!</p>
-`;
+## custom elements
 
-class BobIsCool extends HTMLElement {
-	constructor() {
-		super();
+- create / define custom element
+  - es6 classes
+- lifecycle
+  - connectedCallback
+	- disconnectedCallback
+	- attributeChangedCallback
+- getters and setters
+- property attribute reflection
+- prperty vs attribute
+- content
+	- innerHTML
+	- template
 
-		this._$name = undefined;
-		this._name = '';
+## shadow DOM
 
-		this._changeHanlders = {};
-		this._changeHanlders.name = (oldValue, newValue) => this.handleNameChange(oldValue, newValue);
-	}
-
-	handleNameChange(oldValue, newValue) {
-		if (oldValue === newValue) {
-			return;
-		}
-
-		this.name = newValue;
-	}
-
-	connectedCallback() {
-		this.innerHTML = template;
-
-		this._$name = this.querySelector('#name');
-		this.name = this.getAttribute('name') || 'Bob';
-	}
-
-	get name() {
-		return this._name;
-	}
-
-	set name(newName) {
-		if (newName === this.name) {
-			return;
-		}
-
-		this._$name.textContent = newName;
-		this.setAttribute('name', newName);
-		this._name = newName;
-	}
-
-	static get observedAttributes() {
-		return ['name'];
-	}
-
-	attributeChangedCallback(attrName, oldValue, newValue) {
-		let handler = this._changeHanlders[attrName];
-
-		if (handler) {
-			handler(oldValue, newValue);
-		}
-	}
-
-	disconnectedCallback() {
-		console.log('You haven\'t seen the last of me ...');
-	}
-}
-
-window.customElements.define('bob-is-cool', BobIsCool);
-```
+- demo need: clobber styles
+- attach shadow
+- encapsulation
+- expose variables
+- slots
+- :host
+- ::slotted
+- open vs closed mode
