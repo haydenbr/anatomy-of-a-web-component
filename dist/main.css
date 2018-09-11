@@ -1709,6 +1709,10 @@ section.intro-slide .avatar-container {
     top: 50%;
     left: 50%; }
 
+section.intro-slide .cover {
+  width: 400px;
+  margin-bottom: 75px; }
+
 section.intro-slide .top-row {
   display: -webkit-box;
   display: -ms-flexbox;
