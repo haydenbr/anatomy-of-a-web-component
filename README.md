@@ -1,11 +1,9 @@
-# Docker for JavaScript Developers
+# The Anatomy of a Web Component
 
-You can either run the slides directly on your machine or inside a container.
+You can run these slides in one of three ways:
 
-To run the slides directly on your machine, `yarn install` and then `yarn serve`.
-
-To run the slides from a docker container, you can either `yarn start` or `docker-compose up`.
-
-You can check out the demo-notes.md to see the hands on examples.
+1. `yarn start`, which starts a container with a dev server running inside, if you have Docker installed
+2. `yarn` then `yarn serve`
+3. Open dist files in your browser
 
 The slides use [Reveal.js](https://revealjs.com/#/).
